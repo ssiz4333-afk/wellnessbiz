@@ -39,7 +39,7 @@ const Admin = () => {
 
     const fetchInquiries = async () => {
         try {
-            const response = await fetch("http://localhost:3000/api/v1/inquiries");
+            const response = await fetch("/api/v1/inquiries");
             if (!response.ok) throw new Error("Failed to fetch data");
             const result = await response.json();
             setInquiries(result.data);
@@ -56,7 +56,7 @@ const Admin = () => {
 
     const handleStatusChange = async (id: number, newStatus: string) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/v1/inquiries/${id}/status`, {
+            const response = await fetch(`/api/v1/inquiries/${id}/status`, {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ status: newStatus }),
@@ -77,7 +77,7 @@ const Admin = () => {
                 { section: "hero", key: "badge", value: heroContent.badge },
             ];
 
-            const response = await fetch("http://localhost:3000/api/v1/content", {
+            const response = await fetch("/api/v1/content", {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ items }),

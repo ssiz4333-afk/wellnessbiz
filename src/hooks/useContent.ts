@@ -4,7 +4,7 @@ export const useContent = () => {
     return useQuery({
         queryKey: ['content'],
         queryFn: async () => {
-            const response = await fetch('http://localhost:3000/api/v1/content');
+            const response = await fetch('/api/v1/content');
             if (!response.ok) {
                 throw new Error('Failed to fetch content');
             }

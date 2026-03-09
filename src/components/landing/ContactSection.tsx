@@ -11,7 +11,7 @@ const ContactSection = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:3000/api/v1/inquiries', {
+      const response = await fetch('/api/v1/inquiries', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, phone, message })
@@ -55,6 +55,24 @@ const ContactSection = () => {
           onSubmit={handleSubmit}
           className="max-w-lg mx-auto space-y-5"
         >
+          <div className="bg-background/50 border border-border rounded-xl p-8 text-center mt-8">
+            <h3 className="text-xl font-medium mb-3 text-foreground">
+              온라인 상담 접수 기능 준비 중입니다
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              정식 사이트 오픈 후 이용하실 수 있습니다. 지금은 아래 채널을 이용해주세요.
+            </p>
+            <a
+              href="https://open.kakao.com/o/sMwuYIVg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 bg-[#FEE500] text-[#191919] px-6 py-3 rounded-xl font-semibold hover:brightness-95 transition"
+            >
+              카카오톡으로 바로 문의하기
+            </a>
+          </div>
+
+          {/* Form is temporarily disabled so backend server isn't required 
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-secondary-foreground mb-1.5">이름</label>
             <input
@@ -97,6 +115,7 @@ const ContactSection = () => {
             <Send className="w-4 h-4" />
             문의 보내기
           </button>
+          */}
         </motion.form>
       </div>
     </section>

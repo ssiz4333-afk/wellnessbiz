@@ -10,7 +10,7 @@ const navItems = [
   { label: "dōTERRA", href: "#doterra" },
   { label: "힐링핸즈", href: "#healing-hands" },
   { label: "코치 소개", href: "#about" },
-  { label: "상담 문의", href: "#contact" },
+  { label: "상담 문의", href: "https://open.kakao.com/o/sMwuYIVg", external: true },
 ];
 
 const Navbar = () => {
@@ -23,19 +23,22 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const handleClick = (href: string) => {
+  const handleClick = (item: { href: string; external?: boolean }) => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
+    if (item.external) {
+      window.open(item.href, "_blank", "noopener,noreferrer");
+      return;
+    }
+    const el = document.querySelector(item.href);
     el?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "bg-background/90 backdrop-blur-lg shadow-sm border-b border-border/50"
-          : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
+        ? "bg-background/90 backdrop-blur-lg shadow-sm border-b border-border/50"
+        : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between h-16">
         <button
@@ -50,12 +53,11 @@ const Navbar = () => {
           {navItems.map((item) => (
             <li key={item.href}>
               <button
-                onClick={() => handleClick(item.href)}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  scrolled
-                    ? "text-muted-foreground hover:text-foreground hover:bg-muted"
-                    : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
-                }`}
+                onClick={() => handleClick(item)}
+                className={`px-3 py-2 rounded-lg text-sm font-medium transition-colors ${scrolled
+                  ? "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  : "text-primary-foreground/80 hover:text-primary-foreground hover:bg-primary-foreground/10"
+                  }`}
               >
                 {item.label}
               </button>
@@ -66,9 +68,8 @@ const Navbar = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
-          className={`md:hidden p-2 rounded-lg transition-colors ${
-            scrolled ? "text-foreground hover:bg-muted" : "text-primary-foreground hover:bg-primary-foreground/10"
-          }`}
+          className={`md:hidden p-2 rounded-lg transition-colors ${scrolled ? "text-foreground hover:bg-muted" : "text-primary-foreground hover:bg-primary-foreground/10"
+            }`}
         >
           {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
@@ -87,7 +88,7 @@ const Navbar = () => {
               {navItems.map((item) => (
                 <li key={item.href}>
                   <button
-                    onClick={() => handleClick(item.href)}
+                    onClick={() => handleClick(item)}
                     className="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                   >
                     {item.label}

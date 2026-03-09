@@ -7,9 +7,6 @@ const HeroSection = () => {
   const { data } = useContent();
   const heroContent = data?.data?.hero || {};
 
-  const scrollToContact = () => {
-    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -43,14 +40,16 @@ const HeroSection = () => {
             dangerouslySetInnerHTML={{ __html: heroContent.subtitle || '무점포 · 무자본 · 무경험으로 실현하는 경제적 자유.<br class="hidden md:block" />도테라 비즈니스 전문가 정종범이 그 길을 함께합니다.' }}
           />
 
-          <motion.button
-            onClick={scrollToContact}
+          <motion.a
+            href="https://open.kakao.com/o/sMwuYIVg"
+            target="_blank"
+            rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full text-lg font-semibold shadow-gold transition-all hover:brightness-110"
+            className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full text-lg font-semibold shadow-gold transition-all hover:brightness-110"
           >
             지금 바로 코칭 상담하기
-          </motion.button>
+          </motion.a>
         </motion.div>
       </div>
 
