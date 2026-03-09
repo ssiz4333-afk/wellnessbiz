@@ -8,12 +8,27 @@ const ContactSection = () => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    toast.success("문의가 접수되었습니다. 빠른 시간 내에 연락드리겠습니다!");
-    setName("");
-    setPhone("");
-    setMessage("");
+    try {
+      const response = await fetch('http://localhost:3000/api/v1/inquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, message })
+      });
+
+      if (response.ok) {
+        toast.success("문의가 접수되었습니다. 빠른 시간 내에 연락드리겠습니다!");
+        setName("");
+        setPhone("");
+        setMessage("");
+      } else {
+        toast.error("문의 접수 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+      }
+    } catch (error) {
+      toast.error("서버에 연결할 수 없습니다. 잠시 후 다시 시도해주세요.");
+      console.error(error);
+    }
   };
 
   return (
