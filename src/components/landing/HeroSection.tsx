@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import { Leaf } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useContent } from "@/hooks/useContent";
 
 const HeroSection = () => {
+  const { data } = useContent();
+  const heroContent = data?.data?.hero || {};
+
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -24,21 +28,20 @@ const HeroSection = () => {
         >
           <div className="inline-flex items-center gap-2 rounded-full bg-primary-foreground/20 px-4 py-2 mb-8 backdrop-blur-sm">
             <Leaf className="w-4 h-4 text-primary-foreground" />
-            <span className="text-sm font-medium text-primary-foreground">dōTERRA Wellness Expert</span>
+            <span className="text-sm font-medium text-primary-foreground">
+              {heroContent.badge || "dōTERRA Wellness Expert"}
+            </span>
           </div>
 
-          <h1 className="text-2xl md:text-[2.75rem] lg:text-5xl font-display font-bold text-primary-foreground leading-tight mb-6">
-            건강이 자산이 되는 삶,
-            <br />
-            <span className="text-gradient-gold">도테라 웰니스 비즈니스</span>로
-            <br className="md:hidden" /> 시작하세요.
-          </h1>
+          <h1
+            className="text-2xl md:text-[2.75rem] lg:text-5xl font-display font-bold text-primary-foreground leading-tight mb-6"
+            dangerouslySetInnerHTML={{ __html: heroContent.title || '건강이 자산이 되는 삶,<br /><span class="text-gradient-gold">도테라 웰니스 비즈니스</span>로<br class="md:hidden" /> 시작하세요.' }}
+          />
 
-          <p className="text-lg md:text-xl text-primary-foreground/85 mb-10 leading-relaxed font-light">
-            무점포 · 무자본 · 무경험으로 실현하는 경제적 자유.
-            <br className="hidden md:block" />
-            도테라 비즈니스 전문가 정종범이 그 길을 함께합니다.
-          </p>
+          <p
+            className="text-lg md:text-xl text-primary-foreground/85 mb-10 leading-relaxed font-light"
+            dangerouslySetInnerHTML={{ __html: heroContent.subtitle || '무점포 · 무자본 · 무경험으로 실현하는 경제적 자유.<br class="hidden md:block" />도테라 비즈니스 전문가 정종범이 그 길을 함께합니다.' }}
+          />
 
           <motion.button
             onClick={scrollToContact}
