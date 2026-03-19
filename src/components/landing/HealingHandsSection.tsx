@@ -49,12 +49,48 @@ const HealingHandsSection = () => (
         </p>
       </motion.div>
 
-      <div className="flex flex-col gap-12 max-w-5xl mx-auto">
+      <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
+        <div className="space-y-6 order-2 lg:order-1">
+          {initiatives.map((item, i) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
+              className="flex gap-5 p-5 rounded-xl bg-background border border-border hover:shadow-gold transition-all duration-500"
+            >
+              <div className="w-12 h-12 rounded-xl bg-gradient-sage flex items-center justify-center shrink-0">
+                <item.icon className="w-6 h-6 text-primary-foreground" />
+              </div>
+              <div>
+                <h3 className="text-lg font-display font-bold text-foreground mb-1">
+                  {item.title}
+                </h3>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {item.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="text-muted-foreground text-sm leading-relaxed pt-2"
+          >
+            당신의 비즈니스가 누군가의 희망이 되는 곳. 정종범과 함께, 단순한
+            수익을 넘어 세상을 바꾸는 선한 영향력에 동참하세요.
+          </motion.p>
+        </div>
+
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, x: 30 }}
+          whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="rounded-3xl overflow-hidden shadow-sage w-full aspect-video relative"
+          className="rounded-2xl overflow-hidden shadow-sage order-1 lg:order-2 w-full aspect-video relative"
         >
           <iframe
             src="https://www.youtube.com/embed/qL9fyKxail0?autoplay=1&mute=1&rel=0&loop=1&playlist=qL9fyKxail0"
@@ -64,42 +100,6 @@ const HealingHandsSection = () => (
             allowFullScreen
           ></iframe>
         </motion.div>
-
-        <div className="grid md:grid-cols-3 gap-6">
-          {initiatives.map((item, i) => (
-            <motion.div
-              key={item.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.15 }}
-              className="flex flex-col items-center text-center gap-4 p-8 rounded-2xl bg-background border border-border hover:shadow-gold transition-all duration-500"
-            >
-              <div className="w-14 h-14 rounded-2xl bg-gradient-sage flex items-center justify-center shrink-0">
-                <item.icon className="w-7 h-7 text-primary-foreground" />
-              </div>
-              <div>
-                <h3 className="text-lg font-display font-bold text-foreground mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm">
-                  {item.description}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5 }}
-          className="text-center text-muted-foreground text-sm leading-relaxed"
-        >
-          당신의 비즈니스가 누군가의 희망이 되는 곳. 정종범과 함께, 단순한
-          수익을 넘어 세상을 바꾸는 선한 영향력에 동참하세요.
-        </motion.p>
       </div>
     </div>
   </section>
