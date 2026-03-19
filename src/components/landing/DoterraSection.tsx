@@ -129,15 +129,26 @@ const DoterraSection = () => (
         <p className="text-center text-sm text-muted-foreground mb-6 max-w-xl mx-auto">
           외부 자본이나 대출 없이 스스로 성장한 강력하고 안정적인 비즈니스 기반
         </p>
-        <a 
-          href="https://www.doterra.com/KR/ko_KR" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium transition-all bg-gradient-gold text-white rounded-full hover:shadow-gold hover:opacity-90"
-        >
-          도테라 코리아 공식 웹사이트 접속하기
-          <ExternalLink className="w-4 h-4" />
-        </a>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full px-4">
+          <a 
+            href="https://www.doterra.com/KR/ko_KR" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium transition-all bg-gradient-gold text-white rounded-full hover:shadow-gold hover:opacity-90 w-full sm:w-auto"
+          >
+            도테라 코리아 공식 웹사이트 접속하기
+            <ExternalLink className="w-4 h-4" />
+          </a>
+          <a 
+            href="https://doterra.me/eKSUl9" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium transition-all bg-gradient-sage text-white rounded-full hover:shadow-sage hover:opacity-90 w-full sm:w-auto"
+          >
+            도테라 신규회원가입
+            <ExternalLink className="w-4 h-4" />
+          </a>
+        </div>
       </motion.div>
     </div>
   </section>
