@@ -90,13 +90,15 @@ const HealingHandsSection = () => (
           initial={{ opacity: 0, x: 30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="rounded-2xl overflow-hidden shadow-sage order-1 lg:order-2"
+          className="rounded-2xl overflow-hidden shadow-sage order-1 lg:order-2 w-full aspect-video relative"
         >
-          <img
-            src={healingHandsImpact}
-            alt="doTERRA Healing Hands 사회공헌 활동"
-            className="w-full h-auto object-cover"
-          />
+          <iframe
+            src="https://www.youtube.com/embed/oStLzJ23F7E?rel=0"
+            title="doTERRA Healing Hands"
+            className="absolute top-0 left-0 w-full h-full border-0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
         </motion.div>
       </div>
     </div>
