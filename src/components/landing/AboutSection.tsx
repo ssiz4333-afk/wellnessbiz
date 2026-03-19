@@ -15,7 +15,7 @@ const AboutSection = () => (
         >
           <img
             src={coachProfile}
-            alt="정종범 코치 프로필 사진"
+            alt="정종범 디렉터 프로필 사진"
             className="w-56 h-56 rounded-full object-cover object-top shadow-sage"
           />
         </motion.div>
@@ -31,14 +31,14 @@ const AboutSection = () => (
           </h2>
           <p className="text-muted-foreground text-lg leading-relaxed mb-6">
             도테라 에센셜 오일을 매개로 사람들의 건강과 삶의 가치를 높이는 웰니스 비즈니스 전문가입니다.
-            진정성 있는 코칭으로 많은 분들이 경제적 자유와 건강한 삶을 동시에 실현할 수 있도록 돕고 있습니다.
+            진정성 있는 디렉팅으로 많은 분들이 경제적 자유와 건강한 삶을 동시에 실현할 수 있도록 돕고 있습니다.
           </p>
           <div className="flex gap-6">
             <div className="flex items-center gap-2 text-sm text-secondary-foreground">
               <Award className="w-4 h-4 text-accent" /> dōTERRA 비즈니스 전문가
             </div>
             <div className="flex items-center gap-2 text-sm text-secondary-foreground">
-              <Heart className="w-4 h-4 text-accent" /> 웰니스 코치
+              <Heart className="w-4 h-4 text-accent" /> 웰니스 디렉터
             </div>
           </div>
         </motion.div>

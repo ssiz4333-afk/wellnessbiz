@@ -48,7 +48,7 @@ const HeroSection = () => {
             whileTap={{ scale: 0.98 }}
             className="inline-flex items-center justify-center gap-2 bg-accent text-accent-foreground px-8 py-4 rounded-full text-lg font-semibold shadow-gold transition-all hover:brightness-110"
           >
-            지금 바로 코칭 상담하기
+            지금 바로 디렉팅 상담하기
           </motion.a>
         </motion.div>
       </div>

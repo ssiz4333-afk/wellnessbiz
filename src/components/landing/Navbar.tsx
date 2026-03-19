@@ -5,11 +5,11 @@ import tripleGroupLogo from "@/assets/triple-group-logo.png";
 
 const navItems = [
   { label: "Triple-Free 비즈니스", href: "#value" },
-  { label: "코칭 서비스", href: "#services" },
+  { label: "디렉팅 서비스", href: "#services" },
   { label: "수서센터", href: "#center" },
   { label: "dōTERRA", href: "#doterra" },
   { label: "힐링핸즈", href: "#healing-hands" },
-  { label: "코치 소개", href: "#about" },
+  { label: "디렉터 소개", href: "#about" },
   { label: "상담 문의", href: "https://open.kakao.com/o/sMwuYIVg", external: true },
 ];
 

@@ -25,7 +25,7 @@ const Footer = () => (
 
       <div className="mt-8 pt-6 border-t border-primary-foreground/15 text-center">
         <p className="text-primary-foreground/50 text-xs">
-          © 2026 정종범 웰니스 코칭. All rights reserved.
+          © 2026 정종범 웰니스 디렉팅. All rights reserved.
         </p>
       </div>
     </div>

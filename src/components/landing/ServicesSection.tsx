@@ -4,19 +4,19 @@ import { BarChart3, Users, Instagram } from "lucide-react";
 const services = [
   {
     icon: BarChart3,
-    title: "도테라 비즈니스 코칭",
+    title: "도테라 비즈니스 디렉팅",
     description: "성공적인 네트워크 마케팅 전략과 수익 구조 최적화 가이드",
     features: ["수익 구조 분석", "마케팅 전략 수립", "성장 로드맵 설계"],
   },
   {
     icon: Users,
-    title: "리더십 코칭",
+    title: "리더십 디렉팅",
     description: "팀을 이끄는 힘, 건강한 조직 문화를 만드는 리더십 인사이트",
     features: ["팀 빌딩 전략", "조직 문화 설계", "동기부여 기법"],
   },
   {
     icon: Instagram,
-    title: "인스타그램 마케팅 코칭",
+    title: "인스타그램 마케팅 디렉팅",
     description: "퍼스널 브랜딩부터 실전 마케팅까지, SNS를 통한 비즈니스 확장법",
     features: ["퍼스널 브랜딩", "콘텐츠 전략", "팔로워 성장 전략"],
   },
@@ -32,10 +32,10 @@ const ServicesSection = () => (
         className="text-center mb-16"
       >
         <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-          코칭 프로그램
+          디렉팅 프로그램
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          당신의 성공을 위한 맞춤형 코칭 서비스
+          당신의 성공을 위한 맞춤형 디렉팅 서비스
         </p>
       </motion.div>
 
