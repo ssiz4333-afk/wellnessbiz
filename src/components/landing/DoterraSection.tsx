@@ -1,5 +1,5 @@
 import { motion, useInView } from "framer-motion";
-import { Globe, TrendingUp, Users, ShieldCheck } from "lucide-react";
+import { Globe, TrendingUp, Users, ShieldCheck, ExternalLink } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import doterraHq from "@/assets/doterra-hq.png";
 
@@ -119,15 +119,26 @@ const DoterraSection = () => (
         ))}
       </div>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
+      <motion.div
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ delay: 0.5 }}
-        className="text-center text-sm text-muted-foreground mt-8 max-w-xl mx-auto"
+        transition={{ delay: 0.6 }}
+        className="flex flex-col items-center mt-12"
       >
-        외부 자본이나 대출 없이 스스로 성장한 강력하고 안정적인 비즈니스 기반
-      </motion.p>
+        <p className="text-center text-sm text-muted-foreground mb-6 max-w-xl mx-auto">
+          외부 자본이나 대출 없이 스스로 성장한 강력하고 안정적인 비즈니스 기반
+        </p>
+        <a 
+          href="https://www.doterra.com/KR/ko_KR" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium transition-all bg-gradient-gold text-white rounded-full hover:shadow-gold hover:opacity-90"
+        >
+          도테라 코리아 공식 웹사이트 접속하기
+          <ExternalLink className="w-4 h-4" />
+        </a>
+      </motion.div>
     </div>
   </section>
 );
