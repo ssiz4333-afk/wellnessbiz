@@ -93,7 +93,7 @@ const HealingHandsSection = () => (
           className="rounded-2xl overflow-hidden shadow-sage order-1 lg:order-2 w-full aspect-video relative"
         >
           <iframe
-            src="https://www.youtube.com/embed/oStLzJ23F7E?rel=0"
+            src="https://www.youtube.com/embed/qL9fyKxail0?autoplay=1&mute=1&rel=0&loop=1&playlist=qL9fyKxail0"
             title="doTERRA Healing Hands"
             className="absolute top-0 left-0 w-full h-full border-0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
