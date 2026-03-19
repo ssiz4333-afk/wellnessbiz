@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import tripleGroupLogo from "@/assets/triple-group-logo.png";
 
 const navItems = [
-  { label: "3무 비즈니스", href: "#value" },
+  { label: "Triple-Free 비즈니스", href: "#value" },
   { label: "코칭 서비스", href: "#services" },
   { label: "수서센터", href: "#center" },
   { label: "dōTERRA", href: "#doterra" },

@@ -35,7 +35,7 @@ const ValueProposition = () => (
           누구나 시작할 수 있습니다
         </h2>
         <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-          세 가지 '무(無)'로 진입 장벽을 없앴습니다
+          트리플 프리(Triple-Free) 시스템으로 진입 장벽을 완전히 없앴습니다
         </p>
       </motion.div>
 
